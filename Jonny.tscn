@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://jonny_frames.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Jonny.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/music/Level1/jump1.ogg" type="AudioStream" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 27.0
+height = 38.1948
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.6152, 9.68557 )
+
+[node name="Jonny" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.193878, 9.11003 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 1.76777, 45.2548 )
+shape = SubResource( 2 )
+
+[node name="Jump_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="No_sound" type="AudioStreamPlayer2D" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

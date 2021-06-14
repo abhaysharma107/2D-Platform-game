@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Pause_button.gd" type="Script" id=1]
+[ext_resource path="res://ASSETS/UI/Level1/pause.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/UI/Level1/pause_white.png" type="Texture" id=3]
+
+[node name="Stop" type="TouchScreenButton"]
+normal = ExtResource( 3 )
+pressed = ExtResource( 2 )
+visibility_mode = 1
+script = ExtResource( 1 )

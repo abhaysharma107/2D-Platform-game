@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ASSETS/UI/Level1/red_button12.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://ASSETS/Title_screen/backgroundColorForest.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/UI/Level1/open.png" type="Texture" id=4]
+[ext_resource path="res://back.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 55
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 2 )
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 416.0
+margin_top = 56.0
+margin_right = 608.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.780392, 0.454902, 0.0784314, 1 )
+text = "Options"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music_button" type="CheckButton" parent="Control"]
+margin_left = 295.0
+margin_top = 181.0
+margin_right = 683.0
+margin_bottom = 234.0
+pressed = true
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music_label" type="Label" parent="Control"]
+margin_left = 354.102
+margin_top = 186.627
+margin_right = 449.102
+margin_bottom = 229.627
+custom_fonts/font = SubResource( 2 )
+text = "Music"
+
+[node name="Music_button2" type="CheckButton" parent="Control"]
+margin_left = 295.0
+margin_top = 287.0
+margin_right = 685.0
+margin_bottom = 340.0
+pressed = true
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music_label2" type="Label" parent="Control"]
+margin_left = 349.859
+margin_top = 291.278
+margin_right = 450.859
+margin_bottom = 334.278
+custom_fonts/font = SubResource( 2 )
+text = "Sound"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="TouchScreenButton" parent="Control"]
+position = Vector2( 111.785, 585.09 )
+rotation = 3.14159
+normal = ExtResource( 4 )
+script = ExtResource( 5 )
+[connection signal="released" from="Control/back" to="Control/back" method="_on_back_released"]
